@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+    options {disableConcurrentBuilds()}
+    environment {
+        SCANNER_HOME = tool 'sonarqubescanner'
+        ORGANIZATION = "igorstojanovski-github"
+        PROJECT_NAME = "igorstojanovski_jenkins-pipeline-as-code"
+    }
+    stages{
+        
+        stage('clean workspaces -----------') { 
+            steps {
+              cleanWs()
+              sh 'env'
+            } //steps
+        }  //stage
+
+        
+        stage("git clone -----------------"){
+            steps {
+                cleanWs()
+                    checkout([$class: 'GitSCM', 
+                    branches: [[name: '*/master']], 
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [[$class: 'CleanCheckout']], 
+                    submoduleCfg: [], 
+                    userRemoteConfigs: [
+                        [url: 'git@github.com:agustinjaume/sonar.git', credentialsId: '']
+                        ]])
+                sh 'pwd' 
+                sh 'ls -l'
+            } //steps
+        }  //stage
+    
+        stage('Code Quality Check via SonarQube') {
+            steps {
+                script {
+                    withSonarQubeEnv("serversonardocker") {
+                        sh '''
+                        cd projects/frontend-app1
+                        pwd
+                        $SCANNER_HOME/bin/sonar-scanner \
+                        -Dsonar.projectKey=frontend-app1 \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://172.17.0.3:9000 \
+                        -Dsonar.login=cbf22fde4fe3cdf1f5236dd8a420fb325dafaf12
+                        '''
+                    } // withSonarQubeEnv
+                }
+            } //steps
+        }  //stage       
+   }  // stages
+} //pipeline
+
+

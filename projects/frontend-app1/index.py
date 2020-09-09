@@ -11,3 +11,4 @@ def hello():
 # virtualenv frontend
 # source frontend/Scripts/activate
 # pip3 install flask
+#  pip install --upgrade pip --user

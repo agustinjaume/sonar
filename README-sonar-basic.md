@@ -65,19 +65,23 @@ You can monitor the coverage of our tests, so that we check if it is good enough
 
 ### Create and deploy personality version
 
-```
-cd docker
-docker build -t "sonar-ideasextraordinarias:v2" .   ( en localhost)
-
-<!-- 
-docker  tag  sonar-ideasextraordinarias:v2  aguexitoso/sonar-ideasextraordinarias:v1  ( para subir a registro publico ) 
-docker login 
-docker push aguexitoso/sonar-ideasextraordinarias:v2 
--->
-
-docker run -d --name sonarqube -p 9000:9000 -p 5432:5432 sonar-ideasextraordinarias:v2
+Postgres
 
 ```
+docker run -d --name postgres -e POSTGRES_USER=user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=db -e POSTGRES_HOST_AUTH_METHOD=trust  -p 5432:5432 postgres
+```
+
+Sonarqube
+
+```
+docker run -d --name sonarqube -p 9000:9000 -e sonar.jdbc.username=user -e sonar.jdbc.password=pass -e sonar.jdbc.url=jdbc:postgresql://172.17.0.1:5432/db sonarqube
+```
+
+Tool web Gui Postgres
+
+https://www.pgadmin.org/
+
+-----------------------
 
 Log in to http://localhost:9000 with System Administrator credentials (login=admin, password=admin).
 
