@@ -167,3 +167,4 @@ sonar.projectKey=my:project
 - https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
 - https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
 - https://www.it-swarm.dev/es/sonarqube/existen-otras-herramientas-de-gestion-de-calidad-que-no-sean-sonarqube/971093933/
+- https://rules.sonarsource.com/python/type/Vulnerability/RSPEC-5445
