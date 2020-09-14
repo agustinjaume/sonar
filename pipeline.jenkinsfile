@@ -3,8 +3,6 @@ pipeline {
     options {disableConcurrentBuilds()}
     environment {
         SCANNER_HOME = tool 'sonarqubescanner'
-        ORGANIZATION = "igorstojanovski-github"
-        PROJECT_NAME = "igorstojanovski_jenkins-pipeline-as-code"
     }
     stages{
         
@@ -19,6 +17,7 @@ pipeline {
         stage("git clone -----------------"){
             steps {
                 cleanWs()
+                    withCredentials([string(credentialsId: 'sonar-token-app1', variable: 'TOKEN')]) {  sh """  echo $TOKEN  """  }
                     checkout([$class: 'GitSCM', 
                     branches: [[name: '*/master']], 
                     doGenerateSubmoduleConfigurations: false, 
@@ -43,7 +42,7 @@ pipeline {
                         -Dsonar.projectKey=frontend-app1 \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://172.17.0.3:9000 \
-                        -Dsonar.login=cbf22fde4fe3cdf1f5236dd8a420fb325dafaf12
+                        -Dsonar.login=d6efc007b2f1be148822ff5ef1748b478c6cdea8
                         '''
                     } // withSonarQubeEnv
                 }
@@ -51,5 +50,3 @@ pipeline {
         }  //stage       
    }  // stages
 } //pipeline
-
-
