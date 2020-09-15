@@ -58,20 +58,16 @@ Cyclomatic Complexity Risk Assessment
 
 You can monitor the coverage of our tests, so that we check if it is good enough for our quality standards.
 
-#### Rules 
-
-<img src="./images/rules.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
-
 
 ### Create and deploy personality version
 
-Postgres
+#### Postgres
 
 ```
 docker run -d --name postgres -e POSTGRES_USER=user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=db -e POSTGRES_HOST_AUTH_METHOD=trust  -p 5432:5432 postgres
 ```
 
-Sonarqube
+#### Sonarqube
 
 ```
 docker run -d --name sonarqube -p 9000:9000 -e sonar.jdbc.username=user -e sonar.jdbc.password=pass -e sonar.jdbc.url=jdbc:postgresql://172.17.0.1:5432/db sonarqube
@@ -103,6 +99,10 @@ SonarScanner for Jenkins
 SonarScanner for Ant
 SonarScanner
 
+#### Rules 
+
+<img src="./images/rules.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+
 
 ### Deploy test with Sonarqube only 
 
@@ -111,10 +111,13 @@ Steps
 
 - New Project and define name
 - Create token, and we will define name token, after copy token in secure zone   
+- Create file properties and save them in the project root folder
+- We download the sonar scanner for the only time and save it in a location accessible from the projects.
+
+
   ```
-  example : 
+  example token : 
   frontend-app1-token: e860a7ae57d17125df16570b489a200308a0eaf8
-  backend-app1:        618ddbeabd4f2a9d1c5d4bf37f1ec145a4b1d019
   ```
 
 
@@ -126,10 +129,13 @@ Steps
     - Linux
     - Windows
     - macOS
+    - 
 - Download and unzip the Scanner for Linux
+- 
 - Create a configuration file in your project's root directory called sonar-project.properties
   
 ```
+
 # must be unique in a given SonarQube instance
 sonar.projectKey=my:project
 
