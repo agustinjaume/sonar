@@ -11,7 +11,9 @@ In this video we will see the concept of Sonarqube and how to manually configure
 
 ### Sonarqube
 
-SonarQube is an open source platform for static analysis of code quality.
+SonarQube is a tool that helps you detect errors in your code before they reach users, so it is essential for programming.
+
+Every time someone talks about software quality, quality assurance, testing, etc… what is usually agreed is that quality should begin to be inspected as soon as possible.
 
 <img src="./images/sonar_by_agustin_jaume-FLOW.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
