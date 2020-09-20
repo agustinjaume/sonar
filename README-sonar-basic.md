@@ -1,6 +1,15 @@
+# Sonarqube code testing tool
+
+## work environment
+
+<img src="./images/DEVOPSQA.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+
+
 ## Objective to perform manual configuration of a project with Sonarqube
 
 In this video we will see the concept of Sonarqube and how to manually configure a project with the Flask web source code.
+
+<img src="./images/flow.PNG" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
 ## Components to see
 
@@ -39,6 +48,14 @@ Every time someone talks about software quality, quality assurance, testing, etc
 - Comments
 - Unit and integration tests
 - Code coverage (Coverage)
+
+### Configuration :
+
+Inside the server or container, the path to change the configuration is:
+
+```
+ /opt/sonarqube/conf/sonar.properties
+ ```
 
 #### Example Cyclomatic complexity:
 
@@ -140,8 +157,6 @@ Steps
 
 # must be unique in a given SonarQube instance
 sonar.projectKey=my:project
-
-# --- optional properties ---
 
 # defaults to project key
 #sonar.projectName=My project

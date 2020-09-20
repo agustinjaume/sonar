@@ -42,7 +42,7 @@ pipeline {
                         -Dsonar.projectKey=frontend-app1 \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://172.17.0.3:9000 \
-                        -Dsonar.login=d6efc007b2f1be148822ff5ef1748b478c6cdea8
+                        -Dsonar.login=$TOKEN
                         '''
                     } // withSonarQubeEnv
                 }
