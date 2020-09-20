@@ -1,0 +1,6 @@
+projectKey=website-2
+serverUrl=http://localhost:9000
+serverVersion=8.4.2.36762
+dashboardUrl=http://localhost:9000/dashboard?id=website-2
+ceTaskId=AXSj4Yr2Vmth6h0uD9sY
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXSj4Yr2Vmth6h0uD9sY
