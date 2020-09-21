@@ -19,15 +19,15 @@ In this video we will see how to configure Sornarqube in Jenkins and we will tes
 
 - Open Jenkins server and we go  to configuration in Jenkins --> Manage Jenkins --> Manage Plugins --> find " SonarQube Scanner for Jenkins" and install.
   
-  <img src="./images/plugin.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+  <img src="./images/plugins.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
   
 - After reboot Jenkins we go to Jenkins --> Manage Jenkins --> Global Tool Configuration --> we go to Sonar block.
 
-  <img src="./images/global-configuration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+  <img src="./images/globalconfiguration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
 - Go to configuration in Jenkins --> Manage Jenkins --> System configuration --> we go to Sonar block. 
 
-<img src="./images/system-configuration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+<img src="./images/systemconfiguration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 -----------------------
 
 Log in to http://localhost:9000 with System Administrator credentials (login=admin, password=admin).
