@@ -17,7 +17,7 @@ pipeline {
         stage("git clone -----------------"){
             steps {
                 cleanWs()
-                    withCredentials([string(credentialsId: 'sonar-token-app1', variable: 'TOKEN')]) {  sh """  echo $TOKEN  """  }
+                    withCredentials([string(credentialsId: 'backend-3', variable: 'TOKEN')]) {  sh """  echo $TOKEN  """  }
                     checkout([$class: 'GitSCM', 
                     branches: [[name: '*/master']], 
                     doGenerateSubmoduleConfigurations: false, 
@@ -36,10 +36,10 @@ pipeline {
                 script {
                     withSonarQubeEnv("serversonardocker") {
                         sh '''
-                        cd projects/frontend-app1
+                        cd projects/backend-3
                         pwd
                         $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectKey=frontend-app1 \
+                        -Dsonar.projectKey=backend-3 \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://172.17.0.3:9000 \
                         -Dsonar.login=$TOKEN
