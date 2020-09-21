@@ -52,7 +52,7 @@ SonarScanner
 
 #### Rules 
 
-<img src="./images/rules.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+<img src="./images/rule.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
 
 ### Deploy test with Sonarqube only 
