@@ -4,7 +4,7 @@
 
 In this video we will see how to configure Sornarqube in Jenkins and we will test our code by running the pipeline and managing the token safely with credentials
 
-<img src="./images/flow-jenkins.PNG" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+<img src="./images/flow-jenkins.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
 ## Components to see
 
@@ -30,11 +30,11 @@ In this video we will see how to configure Sornarqube in Jenkins and we will tes
 - 
 - After reboot Jenkins we go to Jenkins --> Manage Jenkins --> Global Tool Configuration --> we go to Sonar block.
 
-  <img src="./images/global-configuration.PNG" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+  <img src="./images/global-configuration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 
 - Go to configuration in Jenkins --> Manage Jenkins --> System configuration --> we go to Sonar block. 
 
-<img src="./images/system-configuration.PNG" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
+<img src="./images/system-configuration.png" alt="Kitten" title="A cute kitten" width="70%" height="70%" />
 -----------------------
 
 Log in to http://localhost:9000 with System Administrator credentials (login=admin, password=admin).
